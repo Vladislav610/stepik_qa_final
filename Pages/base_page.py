@@ -3,8 +3,8 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from .locators import BasePageLocators, MainPageLocators
-#from selenium.common.exceptions import NoAlertPresentException
-#import math
+from selenium.common.exceptions import NoAlertPresentException
+import math
 
 
 class BasePage:
@@ -56,7 +56,6 @@ class BasePage:
         assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
                                                                      " probably unauthorised user"
 
-"""     
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]
@@ -71,4 +70,4 @@ class BasePage:
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
-"""
+
